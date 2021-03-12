@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="ion-text-center">
+            <h1>Home</h1>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<!-- ionic-test -->
+
+<ion-content [fullscreen]="true">
+    <ion-button routerLink="/contacto">
+        Ir a contacto
+    </ion-button>
+
+    <ion-button routerLink="/nosotros">
+        Ir a Nosotros
+    </ion-button>
+
+    <ion-item>
+        <ion-label position="floating">Nombre: </ion-label>
+        <ion-input [(ngModel)]="nombre"></ion-input>
+        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Apellido: </ion-label>
+        <ion-input [(ngModel)]="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Celular: </ion-label>
+        <ion-input [(ngModel)]="celular"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Email: </ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-button color="" (click)="guardarDatos()">
+        Guardar
+    </ion-button>
+    <!-- enlazar eventos -->
+
+
+
+    <div *ngIf="usuarios.length > 0">
+        <div class="ion-text-center">
+            <h1>usuarios</h1>
+        </div>
+
+
+        <ion-list>
+            <ion-item *ngFor="let usuario of usuarios">
+                <!-- arreglo como una especie de For -->
+                <ion-label>
+                    {{usuario.nombre}} {{usuario.apellido}} {{usuario.celular}} {{usuario.email}}
+                </ion-label>
+                <!-- sintaxis para utilizar una variable {{}} -->
+                <ion-button color="" (click)="editarDatos(usuario)">
+                    Editar
+                </ion-button>
+                <ion-button color="danger" (click)="eliminarDatos(usuario)">
+                    Eliminar
+                </ion-button>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
