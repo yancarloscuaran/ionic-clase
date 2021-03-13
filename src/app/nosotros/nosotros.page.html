@@ -1,41 +1,37 @@
 <ion-header>
     <ion-toolbar>
-        <ion-buttons slot="start">
-            <!-- Da un paso atras -->
-            <ion-back-button></ion-back-button>
-        </ion-buttons>
-
         <ion-title>Operaciones</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
+<ion-content>
     <ion-button routerLink="/home">
         Volver home
     </ion-button>
 
-
     <ion-item>
-        <ion-label position="floating">Numero 1: </ion-label>
+        <ion-label position="floating">Numero 1:</ion-label>
         <ion-input [(ngModel)]="num1"></ion-input>
-        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
     </ion-item>
 
     <ion-item>
-        <ion-label position="floating">Operador: </ion-label>
+        <ion-label position="floating">operador:</ion-label>
         <ion-input [(ngModel)]="operador"></ion-input>
-        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
     </ion-item>
 
     <ion-item>
-        <ion-label position="floating">Numero 2: </ion-label>
+        <ion-label position="floating">Numero 2:</ion-label>
         <ion-input [(ngModel)]="num2"></ion-input>
-        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
     </ion-item>
-
-
-    <ion-button color="" (click)="operacion()">
-        operar
+    <ion-button color="success" (click)="calcularDato()">
+        Calcular
     </ion-button>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                El resultado de: {{num1}} {{operador}} {{num2}} es igual a {{respuesta}}
+            </ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
