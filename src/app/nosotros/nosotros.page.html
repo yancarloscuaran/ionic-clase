@@ -5,14 +5,37 @@
             <ion-back-button></ion-back-button>
         </ion-buttons>
 
-        <ion-title>nosotros</ion-title>
+        <ion-title>Operaciones</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-content>
-        <ion-button routerLink="/home">
-            Volver
-        </ion-button>
-    </ion-content>
+<ion-content [fullscreen]="true">
+
+    <ion-button routerLink="/home">
+        Volver home
+    </ion-button>
+
+
+    <ion-item>
+        <ion-label position="floating">Numero 1: </ion-label>
+        <ion-input [(ngModel)]="num1"></ion-input>
+        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Operador: </ion-label>
+        <ion-input [(ngModel)]="operador"></ion-input>
+        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Numero 2: </ion-label>
+        <ion-input [(ngModel)]="num2"></ion-input>
+        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
+    </ion-item>
+
+
+    <ion-button color="" (click)="operacion()">
+        operar
+    </ion-button>
 </ion-content>
