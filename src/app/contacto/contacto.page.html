@@ -5,16 +5,36 @@
             <ion-back-button></ion-back-button>
         </ion-buttons>
 
-        <ion-title>contacto</ion-title>
+        <ion-title>Saludo</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- ionic-test -->
+
+<ion-content [fullscreen]="true">
     <ion-button routerLink="/home">
-        Volver
+        Volver home
     </ion-button>
 
-    <ion-button routerLink="/nosotros">
-        Volver
+
+    <ion-item>
+        <ion-label position="floating">Nombre a saludar: </ion-label>
+        <ion-input [(ngModel)]="nombres"></ion-input>
+        <!-- sintaxis de angular ngModel -> actualiza en la interfaz -->
+    </ion-item>
+
+
+    <ion-button color="" (click)="guardarDato()">
+        <ion-icon name="hand-left-outline"></ion-icon>
+        Saludo
     </ion-button>
+    <!-- enlazar eventos -->
+
+
+    <ion-item *ngFor="let usuario1 of usuario">
+        <ion-alert>
+            {{usuario1.nombre}}
+        </ion-alert>
+    </ion-item>
+
 </ion-content>
